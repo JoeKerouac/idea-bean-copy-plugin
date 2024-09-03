@@ -1,0 +1,39 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin url="https://www.github.com/JoeKerouac">
+    <id>com.github.JoeKerouac.beancopy</id>
+
+    <name>BeanCopy</name>
+
+    <vendor email="Joe.Kerouac@outlook.com" url="https://github.com/joekerouac">JoeKerouac</vendor>
+
+    <!-- 说明，展示在插件的说明页 -->
+    <description><![CDATA[
+    Usage Instructions:
+    <ol>
+        <li>Place the cursor on the variable name where you want to copy the fields from other variables.</li>
+        <li>Click on the menu <strong>Code</strong> -> <strong>Generate</strong>, then select <strong>Copy properties</strong>.</li>
+        <li>Enter the name of the variable to copy fields from, select the fields to copy, and the relevant code will be generated automatically.</li>
+    </ol>
+
+    Note:
+    <ul>
+        <li>The variable to copy from must be declared before the target variable.</li>
+        <li>Both variables must have the same fields, and these fields must have corresponding <code>get</code> and <code>set</code> methods.</li>
+        <li>The fields will only appear in the selection box if they have matching types and are eligible for copying.</li>
+    </ul>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+
+    <actions>
+        <group id="com.github.joekerouac.beancopy">
+            <add-to-group group-id="GenerateGroup" anchor="first"/>
+            <!--生成属性复制代码-->
+            <action id="bc" class="com.github.joekerouac.beancopy.GenerateSetterAction" text="Copy Properties"
+                    description="Automatically generate code to copy selected fields from the source bean to the target bean.">
+            </action>
+        </group>
+    </actions>
+
+</idea-plugin>
