@@ -1,7 +1,7 @@
 import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
 
 group = "com.github.JoeKerouac"
-version = "0.0.1"
+version = "0.0.2"
 
 plugins {
     id("java")
@@ -19,7 +19,7 @@ repositories {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
 }
 
 dependencies {
@@ -39,8 +39,8 @@ dependencies {
 tasks {
     // Set the JVM compatibility versions
     withType<JavaCompile> {
-        sourceCompatibility = "8"
-        targetCompatibility = "8"
+        sourceCompatibility = "17"
+        targetCompatibility = "17"
         options.encoding = "utf-8"
     }
 
@@ -50,7 +50,6 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231")
-        untilBuild.set("242.*")
     }
 
     signPlugin {
@@ -80,39 +79,8 @@ tasks {
             gpw7OpVapu/R/SPUTouAdgTuhPWW
             -----END CERTIFICATE-----
         """.trimIndent())
-        privateKey.set("""
-            -----BEGIN ENCRYPTED PRIVATE KEY-----
-            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
-            -----END ENCRYPTED PRIVATE KEY-----
-        """.trimIndent())
-        password.set(System.getenv("IDEA_PLUGIN_PRIVATE_KEY"))
+        privateKey.set(System.getenv("IDEA_PLUGIN_PRIVATE_KEY"))
+        password.set(System.getenv("IDEA_PLUGIN_PRIVATE_KEY_PWD"))
     }
 
     publishPlugin {
