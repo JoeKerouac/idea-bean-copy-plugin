@@ -1,7 +1,7 @@
 import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
 
 group = "com.github.JoeKerouac"
-version = "0.0.2"
+version = "0.0.3"
 
 plugins {
     id("java")
@@ -50,6 +50,7 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231")
+        untilBuild.set("251")
     }
 
     signPlugin {
