@@ -7,5 +7,7 @@ sdk: https://download.jetbrains.com/idea/ideaIU-2023.3.win.zip
 - 初始化版本
 
 ## 0.0.2
-- 删除最高版本限制；
+~~- 删除最高版本限制；~~
 
+## 0.0.3
+- 支持251版本的idea；
