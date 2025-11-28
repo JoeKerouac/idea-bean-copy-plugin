@@ -1,7 +1,7 @@
 import org.jetbrains.intellij.platform.gradle.extensions.intellijPlatform
 
 group = "com.github.JoeKerouac"
-version = "0.0.3"
+version = "0.0.4"
 
 plugins {
     id("java")
@@ -36,6 +36,15 @@ dependencies {
     }
 }
 
+intellijPlatform {
+    pluginConfiguration {
+        ideaVersion {
+            // 不设置最大版本号，默认兼容未来所有版本
+            untilBuild = provider { null }
+        }
+    }
+}
+
 tasks {
     // Set the JVM compatibility versions
     withType<JavaCompile> {
@@ -50,7 +59,6 @@ tasks {
 
     patchPluginXml {
         sinceBuild.set("231")
-        untilBuild.set("251.*")
     }
 
     signPlugin {
